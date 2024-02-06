@@ -23,6 +23,18 @@ class ProfileForm(forms.ModelForm):
             # أضف المزيد من التخصيصات حسب الحاجة
         }
 
+        widgets = {
+            'user': forms.Select(attrs={'class': 'form-control'}),  # Dropdown لاختيار المستخدم
+            'postal_code': forms.TextInput(attrs={'class': 'form-control', 'placeholder': '12345'}),  # Input box للرمز البريدي
+            'address': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your address'}),  # Input box للعنوان
+            'personal_identity_number': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'YYYYMMDDXXXX'}),  # Input box للرقم الشخصي
+            'city': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your city'}),  # Input box للمدينة
+            'profile_picture': forms.ClearableFileInput(attrs={'class': 'form-control-file'}),  # File input لصورة البروفايل
+            'language_preference': forms.Select(choices=[('sv', 'Swedish'), ('en', 'English')], attrs={'class': 'form-control'}),  # Dropdown لاختيار اللغة
+            'phone_number': forms.TextInput(attrs={'class': 'form-control', 'placeholder': '+46...'}),  # Input box لرقم الهاتف
+            'bio': forms.Textarea(attrs={'class': 'form-control', 'rows': 3, 'placeholder': 'Tell us about yourself...'}),  # Textarea للسيرة الذاتية
+        }
+
         labels = {
             'bio': 'Biography',
             # أضف تخصيصات العناوين لحقول أخرى حسب الحاجة
