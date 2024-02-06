@@ -1,14 +1,10 @@
 {% extends "base.html" %}
+
 {% block content %}
-<div class="m-2">
-    <h4>accounts</h4>
+<div class="container mt-3">
+    <h1>Welcome to Your Dashboard</h1>
+    <p>This is the main page of your dashboard.</p>
+    <!-- إضافة روابط أو أزرار للميزات المختلفة في لوحة التحكم -->
+    <a href="{% url 'profiles_list' %}" class="btn btn-primary">Go to Feature</a>
 </div>
-<div class="m-2">
-    <h4>profiles</h4>
-</div>
-<div class="m-2"><a class="btn btn-light" href="{% url 'profiles_Profile_list' %}">Profile Listing</a></div>
-<div class="m-2">
-    <h4>pages</h4>
-</div>
-<div class="m-2"><a class="btn btn-light" href="{% url 'pages_Post_list' %}">Post Listing</a></div>
 {% endblock %}

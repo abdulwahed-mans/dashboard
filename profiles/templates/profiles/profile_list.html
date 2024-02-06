@@ -23,9 +23,9 @@
                 <td>{{ profile.city }}</td>
                 <td>{{ profile.phone_number }}</td>
                 <td>
-                    <a href="{% url 'profiles_Profile_detail' profile.pk %}" class="btn btn-info">View</a>
-                    <a href="{% url 'profiles_Profile_update' profile.pk %}" class="btn btn-primary">Edit</a>
-                    <a href="{% url 'profiles_Profile_delete' profile.pk %}" class="btn btn-danger">Delete</a>
+                    <a href="{% url 'profiles_detail' profile.pk %}" class="btn btn-info">View</a>
+                    <a href="{% url 'profiles_update' profile.pk %}" class="btn btn-primary">Edit</a>
+                    <a href="{% url 'profiles_delete' profile.pk %}" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
             {% endfor %}

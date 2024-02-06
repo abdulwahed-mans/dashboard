@@ -7,7 +7,7 @@
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn btn-primary">{{ button_label }}</button>
-        <a href="{% url 'profiles_Profile_list' %}" class="btn btn-secondary">Back to List</a>
+        <a href="{% url 'profiles_list' %}" class="btn btn-secondary">Back to List</a>
     </form>
 </div>
 {% endblock %}

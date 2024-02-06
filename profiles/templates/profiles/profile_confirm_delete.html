@@ -9,7 +9,7 @@
         {% csrf_token %}
         <div class="form-group">
             <button type="submit" class="btn btn-danger">Confirm Delete</button>
-            <a href="{% url 'profiles_Profile_detail' object.pk %}" class="btn btn-secondary">Cancel</a>
+            <a href="{% url 'profiles_detail' object.pk %}" class="btn btn-secondary">Cancel</a>
         </div>
     </form>
 </div>

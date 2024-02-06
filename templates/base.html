@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}My Site{% endblock %}</title>
     <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css"
-        integrity="sha384-Qt9Hug5NfnQDGMoaQYXN1+PiQvda7poO07Jj5gtLd8JkGZG5h6q3HJk2wLjyBb1k" crossorigin="anonymous">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     {% block extra_css %}{% endblock %}
 </head>
 
@@ -39,12 +39,7 @@
     </div>
 
     <!-- Bootstrap JS, Popper.js, and jQuery CDN links -->
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/1TB5jqWb4Lrq9HqaWw8StlD0b5V1w5l3zRHA3n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz4fnFO9gybB3C4s27F/4kFQ9eC5o2lXZ1puhoj1QVbZ5Pf/FQdAGCr0vK" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"
-        integrity="sha384-QmzsM/6jW9gP5a24oO3BvJN1B7L6JUw+O3T8e9NvWkLdz8PF9HQVHKRq7GjtxBvR" crossorigin="anonymous"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     {% block extra_js %}{% endblock %}
 
 </body>

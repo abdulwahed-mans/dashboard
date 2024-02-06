@@ -15,7 +15,7 @@
             <p class="card-text"><strong>City:</strong> {{ profile.city }}</p>
             <p class="card-text"><strong>Phone Number:</strong> {{ profile.phone_number }}</p>
             <p class="card-text"><strong>Language Preference:</strong> {{ profile.get_language_preference_display }}</p>
-            <a href="{% url 'profiles_Profile_update' profile.pk %}" class="btn btn-primary">Edit Profile</a>
+            <a href="{% url 'profiles_update' profile.pk %}" class="btn btn-primary">Edit Profile</a>
         </div>
     </div>
 </div>
