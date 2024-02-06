@@ -1,0 +1,35 @@
+{% extends "base.html" %} <!-- افترض وجود قالب أساسي يُدعى base.html -->
+
+{% block content %}
+<div class="container">
+    <h2>Profile List</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Postal Code</th>
+                <th>Address</th>
+                <th>Personal Identity Number</th>
+                <th>City</th>
+                <th>Phone Number</th>
+                <th>Actions</th> <!-- عمود للإجراءات مثل التفاصيل والتحديث والحذف -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for profile in object_list %}
+            <tr>
+                <td>{{ profile.postal_code }}</td>
+                <td>{{ profile.address }}</td>
+                <td>{{ profile.personal_identity_number }}</td>
+                <td>{{ profile.city }}</td>
+                <td>{{ profile.phone_number }}</td>
+                <td>
+                    <a href="{% url 'profiles_Profile_detail' profile.pk %}" class="btn btn-info">View</a>
+                    <a href="{% url 'profiles_Profile_update' profile.pk %}" class="btn btn-primary">Edit</a>
+                    <a href="{% url 'profiles_Profile_delete' profile.pk %}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-3">
+    <h2>Profile Details</h2>
+    <div class="card" style="width: 18rem;">
+        {% if profile.profile_picture %}
+        <img src="{{ profile.profile_picture.url }}" class="card-img-top" alt="Profile Picture">
+        {% endif %}
+        <div class="card-body">
+            <h5 class="card-title">{{ profile.user.get_full_name }}</h5>
+            <p class="card-text"><strong>Postal Code:</strong> {{ profile.postal_code }}</p>
+            <p class="card-text"><strong>Address:</strong> {{ profile.address }}</p>
+            <p class="card-text"><strong>Personal Identity Number:</strong> {{ profile.personal_identity_number }}</p>
+            <p class="card-text"><strong>City:</strong> {{ profile.city }}</p>
+            <p class="card-text"><strong>Phone Number:</strong> {{ profile.phone_number }}</p>
+            <p class="card-text"><strong>Language Preference:</strong> {{ profile.get_language_preference_display }}</p>
+            <a href="{% url 'profiles_Profile_update' profile.pk %}" class="btn btn-primary">Edit Profile</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

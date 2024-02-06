@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-3">
+    <h2>Confirm Delete</h2>
+    <p>Are you sure you want to delete the profile for "{{ object.user.get_full_name }}"?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <button type="submit" class="btn btn-danger">Confirm Delete</button>
+            <a href="{% url 'profiles_Profile_detail' object.pk %}" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

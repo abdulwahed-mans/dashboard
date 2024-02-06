@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="m-2">
+    <h4>accounts</h4>
+</div>
+<div class="m-2">
+    <h4>profiles</h4>
+</div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'profiles_Profile_list' %}">Profile Listing</a></div>
+<div class="m-2">
+    <h4>pages</h4>
+</div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'pages_Post_list' %}">Post Listing</a></div>
+{% endblock %}
